@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>57 Challenges to Develop Your Coding Skills</title>
+
+</head>
+<body>
+
+<script type="text/javascript">
+    function writeName(){
+        var uName =document.myform.fname.value;
+        var newDiv = document.createElement("div");
+        newDiv.style.color = "red";
+        newDiv.innerText = "Welcome " + uName;
+        document.getElementById("main").appendChild(newDiv);
+    }
+</script>
+<form name = "myform">
+    Enter Name: <input type="text" id="number" name="fname"/><br/>
+    <input type="button" value="Welcome" onclick="writeName()"/>
+</form>
+
+<div id="main">
+
+</div>
+</body>
+</html>

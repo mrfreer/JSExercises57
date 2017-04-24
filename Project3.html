@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Printing Quotes.</title>
+
+
+</head>
+<body>
+<script type="text/javascript">
+    function getInput() {
+        var movieSelected = document.userInput.movies.value;
+        var elem = document.createElement("img");
+        elem.setAttribute("height", "500");
+        elem.setAttribute("weight", "1000");
+        elem.setAttribute("alt", "Movie");
+        document.getElementById("movieImg").innerHTML = "";
+        document.getElementById("movieResult").innerHTML = "";
+        var quote;
+        if(movieSelected == "Star Wars"){
+            elem.setAttribute("src", "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1200px-Star_Wars_Logo.svg.png");
+            quote = "“Your focus determines your reality.” – Qui-Gon Jinn";
+        }
+        else if(movieSelected == "Forrest Gump"){
+            elem.setAttribute("src", "http://i.huffpost.com/gen/1901085/images/o-FORREST-GUMP-facebook.jpg");
+            quote = "Mama always said \"Life was like a box of chocolates, you never know what you're gonna get.\"";
+        }
+        else if(movieSelected == "Battlestar Galactica"){
+            elem.setAttribute("src", "https://upload.wikimedia.org/wikipedia/en/4/40/Battlestar_Galactica_intro.jpg");
+            quote = "There's a reason you separate military and the police. One fights the enemies of the state, the other serves and protects the people. When the military becomes both, then the enemies of the state tend to become the people.";
+        }
+
+        document.getElementById("movieImg").appendChild(elem);
+
+        var newDiv = document.createElement("div");
+        newDiv.style.color = "red";
+        newDiv.innerText = quote;
+        document.getElementById("movieResult").appendChild(newDiv);
+
+    }
+
+</script>
+
+<form name= "userInput">
+
+    Enter the movie:  <select name = "movies">
+        <option value="Star Wars">Star Wars</option>
+        <option value="Forrest Gump">Forrest Gump</option>
+        <option value="Battlestar Galactica">Battlestar Galactica</option>
+    </select>
+
+    <input type="button" value="Click Here" onclick="getInput()">
+
+
+</form>
+<div id="movieImg">
+
+</div>
+<div id="movieResult">
+
+</div>
+</body>
+</html>

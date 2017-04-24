@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+<script>
+    function calc() {
+        var number1 = document.nums.num1.value;
+        var number2 = document.nums.num2.value;
+        var number3 = parseInt(number1) + parseInt(number2);
+        alert("The sum is " + number3);
+    }
+</script>
+
+<form name = "nums">
+What is the first number? <input name = "num1" type = "text">
+What is the second number? <input name = "num2" type= "text">
+    <input type="button" onclick="calc()" value = "Sum the numbers.">
+</form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Counting Number of Characters:</title>
+
+</head>
+<body>
+<script type="text/javascript">
+    function numChars() {
+        var x = document.formInput.uName.value;
+        var newDiv = document.createElement("div");
+        newDiv.style.color = "red";
+        newDiv.innerText = "Your name has " + x.length + " characters.";
+        document.getElementById("addHere").appendChild(newDiv);
+    }
+
+</script>
+
+<form name = "formInput">
+Enter name: <input type = "text" name ="uName">
+<input type = "button" name="value1" value = "Click here" onclick="numChars()">
+
+</form>
+<div id = "addHere">
+
+</div>
+</body>
+</html>

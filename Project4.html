@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mad Libs</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    function makeMadLib() {
+
+        var madlibMade = "Do you "+ document.userInput.uVerb.value + " your " + document.userInput.uAdjective.value + " " +
+            document.userInput.uNoun.value + " " + document.userInput.uAdverb.value + "?";
+
+        var newDiv = document.createElement("div");
+        newDiv.style.color = "red";
+        newDiv.innerText = madlibMade;
+        document.getElementById("madlib").appendChild(newDiv);
+    }
+    
+</script>
+
+Mad Lib Creator!
+<br>
+<form name = "userInput">
+Noun: <input type = "text" name ="uNoun">
+Verb: <input type = "text" name = "uVerb">
+Adjective: <input type= "text" name = "uAdjective">
+Adverb: <input type= "text" name = "uAdverb">
+    <input type="button" value="Make your Madlib!" onclick="makeMadLib()">
+</form>
+
+<div id = "madlib">
+    
+</div>
+
+</body>
+</html>
