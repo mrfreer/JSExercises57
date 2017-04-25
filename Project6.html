@@ -6,10 +6,33 @@
 
 </head>
 <body>
-What is your current age?
-At what age would you like to retire?
 
-You have years left until you can retire.
-It's so you can retire in .
+<script>
+
+
+    function calcRetirement() {
+        var years = (parseInt(document.inputretire.retireAge.value) - parseInt(document.inputretire.curAge.value));
+        var retir = "You have " + years + " years left until you can retire.";
+        var retir2 = "It's " + new Date().getFullYear() + " so you can retire in " + (parseInt(new Date().getFullYear()) +
+            parseInt(years)) + ".";
+        var newDiv = document.createElement("div");
+        newDiv.style.color = "red";
+        newDiv.innerText = retir + '\n' + retir2;
+        document.getElementById("retirement").appendChild(newDiv);
+
+    }
+</script>
+<form name = "inputretire">
+
+What is your current age? <input type = "text" name = "curAge">
+
+At what age would you like to retire? <input type = "text" name= "retireAge">
+<input type = "button" onclick= "calcRetirement()" value="Retirement Calculator">
+</form>
+<div id = "retirement">
+
+</div>
+
+
 </body>
 </html>
