@@ -5,6 +5,25 @@
     <title>Title</title>
 </head>
 <body>
+<script>
+    function calcRoom() {
+        var area = parseFloat(document.room.length.value) *
+            parseFloat(document.room.width.value);
+        var newDiv = document.createElement("div");
+        newDiv.innerText = "Width: " + document.room.width.value + " Length: " + document.room.length.value + " room has an area of " + area + " feet.";
+        document.getElementById("area").appendChild(newDiv);
 
+    }
+
+</script>
+<form name = "room">
+What is the width of the room? <input type = "text" name = "width"  onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+What is the length of the room? <input type= "text" name= "length"  onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+
+<input type="button" value="Calculate Area" onclick="calcRoom()">
+</form>
+<div id="area">
+
+</div>
 </body>
 </html>
