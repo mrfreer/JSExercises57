@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pizza Calculator</title>
+</head>
+<body>
+<script type="text/javascript">
+    function pizzaCalc() {
+        document.getElementById("pizzas").innerHTML = "";
+        var totalSlices = (document.pizzacalc.pizzas.value *
+        document.pizzacalc.slices.value);
+        var remainder = parseInt(totalSlices) %
+            parseInt(document.pizzacalc.people.value);
+        var perperson = parseInt(parseInt(totalSlices) / parseInt(document.pizzacalc.people.value));
+        var newDiv = document.createElement("div");
+        newDiv.innerHTML = "Each person gets " + perperson + " slices with " +
+                remainder + " slice left.";
+        document.getElementById("pizzas").appendChild(newDiv);
+
+
+    }
+</script>
+<form name="pizzacalc">
+How many people? <input type="text" name="people" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+How many pizzas do you have? <input type="text" name="pizzas" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+How many slices per pizza? <input type="text" name="slices" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+<input type="button" name="calcpizza" onclick="pizzaCalc()" value="Pizza Calculator">
+</form>
+<div id = "pizzas">
+
+</div>
+</body>
+</html>
